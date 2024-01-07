@@ -5,20 +5,18 @@ public class LowerCase {
     }
 	
     public static String lowerCase(String s) {
-       // String a = "" + (char) (s.charAt(0) + 32);
-		String a = "";
-
+        String a = "";
+		
 		for (int i = 0; i < s.length(); i++) {
 			char c = s.charAt(i);
 
 			if ((c >= 'A') && (c <= 'Z')) {
-				a += (char) (c + 32);
+				a += (char) (c + 32);	
 
 			} else {
 				a += c;
 			}
 		}
-
         return a;
     }
 }
