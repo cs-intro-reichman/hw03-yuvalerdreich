@@ -70,10 +70,10 @@ public class LoanCalc {
 		while ((H - L) > epsilon) {
 
 			if ((endBalance(loan, rate, n, L) * endBalance(loan, rate, n, middle)) > 0) {
-				middle = L;
+				L = middle;
 
 			} else {
-				middle = H;
+				H = middle;
 			}
 
 			middle = (L + H) / 2;
@@ -93,7 +93,7 @@ public class LoanCalc {
 		rate = rate/100 + 1 ;
 
 		for (int i = 0; i < n; i++) {
-			loan = (loan - payment) * payment;
+			loan = (loan - payment) * rate;
 		}
 
     	return loan;
