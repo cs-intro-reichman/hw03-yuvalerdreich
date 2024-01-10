@@ -4,7 +4,7 @@
 public class LoanCalc {
 	
 	static double epsilon = 0.001;  // The computation tolerance (estimation error)
-	static double increment = 0.0001;
+	static double increment = 0.001;
 	static int iterationCounter;    // Monitors the efficiency of the 
 	static double payment = 1.0;
 	
