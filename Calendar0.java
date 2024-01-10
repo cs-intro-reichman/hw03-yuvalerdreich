@@ -13,9 +13,9 @@ public class Calendar0 {
 		 
 	// Tests the isLeapYear function.
 	private static void isLeapYearTest(int year) {
-		String commonOrLeap = "Common";
+		String commonOrLeap = "common";
 		if (isLeapYear(year)) {
-			commonOrLeap = "Leap";
+			commonOrLeap = "leap";
 		}
 		System.out.println(year + " is a " + commonOrLeap + " year");  
 	}
