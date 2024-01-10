@@ -3,13 +3,14 @@ public class Calendar {
 	static int month = 1;
 	static int year = 1900;
 	static int dayOfWeek = 2;     
-	static int nDaysInMonth = 31;
-    static String findFirstSunday; 
+	static int nDaysInMonth = 31; 
 	
 	public static void main(String args[]) {
 		
         int GivenYear = Integer.parseInt(args[0]);
 	    int debugDaysCounter = 0; 
+
+		dayOfWeek = getFirstDayOfWeek(GivenYear);
 
 	 	while (year < GivenYear) {
 
@@ -35,7 +36,7 @@ public class Calendar {
         }
 
 	 private static void DateAndSunday(int GivenYear) {
-        findFirstSunday(GivenYear);
+
 		if (dayOfWeek == 1) {
 				System.out.println(dayOfMonth + "/" + month + "/" + GivenYear + " Sunday");
 
@@ -84,17 +85,21 @@ public class Calendar {
 				return 31;
 		}
 	}
-private static String findFirstSunday (int GivenYear) {
-    int currentMonth = 1;
-    int currentDayOfWeek = dayOfWeek;
 
-    while (currentDayOfWeek != 1) {
+	private static int getFirstDayOfWeek (int GivenYear) {
+		int dayOfWeek = 2;
+		int currentYear = 1900;
 
-        currentDayOfWeek = (currentDayOfWeek % 7) + 1;
-        currentMonth++;
+		while (currentYear < GivenYear) {
+			if (isLeapYear(currentYear)) {
+				dayOfWeek = (dayOfWeek + 366) % 7;
 
-    }
-    return currentMonth + "/" + 1 + "/" + GivenYear;
-}
+			} else {
+				dayOfWeek = (dayOfWeek + 365) % 7;
+			}
+			currentYear++;
+		}
+		return dayOfWeek;
+	}
 }
 
